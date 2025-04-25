@@ -1,8 +1,7 @@
-/* CSS BY YOUR NAME */
+/* CSS BY Abby Napier*/
 
 /* IMPORTED FONTS*/
-/* IMPORT "INTER" FROM GOOGLE FONTS"
-
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 /* CSS RESET */
 /* http://meyerweb.com/eric/tools/css/reset/
 v2.0 | 20110126
@@ -63,18 +62,148 @@ table {
 }
 
 /* GLOBAL STYLES (MOBILE FIRST (SMALL) */
+header{
+    background-color: var(--black);
+    color: var(--blue);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    filter: drop-shadow(0px 8px 4px var(--blue));
+}
+header h1{
+    text-align: center;
+    margin-top: 1rem;
+}
+header img{
+        animation: bounce 30s ease infinite;
+        margin-top: 1rem;
+      
+     }
+      @keyframes bounce {
+          10% { transform:translateY(5%); }
+          20% { transform:translateY(-5%); }
+          30% { transform:translateY(5%); }
+          40% { transform:translateY(-5%); }
+          50% { transform:translateY(5%); }
+          60% { transform:translateY(-5%); }
+          70% { transform:translateY(5%); }
+          80% { transform:translateY(-5%); }
+          90% { transform:translateY(5%); }
+          100% { transform:translateY(-5%); }
+             
+      }
+h1{
+    font-size: 3rem;
+}
+h2{
+    font-size: 2rem;
+    font-weight: bold;
+}
+h3{
+    font-size: 1.5rem;
+    font-weight: bold;
+    
+}
+p{
+    font-size: 1.1rem;
+}
+body{
+    font-family: Inter;
+    margin: auto;
+    min-width: 400px;
+    background-color: var(--white);
+    padding: .5rem;
+}
 
-/* MIN-WIDTH OF THE PAGE SHOULD NOT GO BELOW 400PX */
 
+nav {
+    background-color: var(--black);
+  }
+  nav ul {
+    width: 100%;
+    margin:0;
+    padding:0;
+    list-style:none;
+    overflow:hidden;
+    text-align:center;
+    max-height: 0;
+  }
+  nav h2 {
+    visibility:hidden;
+    height:1px;
+  }
+  nav li a {
+    display:block;
+    font-size:1.5rem;
+    padding: 1rem;
+    text-transform:uppercase;
+    font-weight:bold;
+    text-decoration:none;
+    color: var(--blue);
+    transition: background-color .3s ease-in;
+  }
+  nav a:hover, nav input:hover {
+      background-color: var(--blue);
+      color: var(--black);
+  }
+  nav label {
+      cursor: pointer;
+      padding: 1.5rem;
+      margin-top: 2.5rem;
+      user-select: none;
+      float: right;
+  }
+  label span {
+      background-color: white;
+      display: block;
+      height: .25rem;
+      position: relative;
+      transition: background-color .3s ease-out;
+      width: 2rem;
+  }
+  label span:before, label span:after {
+      background: white;
+      content: '';
+      display: block;
+      height: 100%;
+      position: absolute;
+      transition: all .2s ease-out;
+      width: 100%;
+  }
+  label span:before {
+      top: .75rem;
+  }
+  label span:after {
+      top: -.75rem;
+  }
+  input {
+    display:none;
+  }
+  input:checked ~ ul {
+      max-height: 500px;
+  }
+  input:checked ~ label span {
+      background: transparent;
+  }
+  input:checked ~ label span:before {
+      transform: rotate(-45deg);
+  }
+  input:checked ~ label span:after {
+      transform: rotate(45deg);
+  }
+  input:checked ~ label:not(.steps) span:before, input:checked ~ label:not(.steps) span:after {
+    top: 0;
+  }
+  
 /* ADD A DIV WITH THE CLASS OF CONTAINER TO EVERY CONTENT CONTAINER THIS IS ALLOW THE BASE ELEMENTS TO BE 100% WIDTH, BUT CONSTRAIN THE ACTUAL CONTENT TO 90% */
-.container {
+.container, .results-container {
     width: 90%;
     max-width: 1200px;
     margin: 0 auto;
 }
 
 /* ADD TO "INNOVATION & INVESTMENT SECTION (Photo by Kevin Matos on Unsplash) */
- {
+ .opener{
     background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('images/vanguard-hero.jpg') no-repeat center center/cover;
     height: 80vh;
     display: grid;
@@ -82,12 +211,71 @@ table {
     text-align: center;
     padding: 1rem;
     overflow: hidden;
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center;    
+    
+}
+.opener a:link, .opener a:visited, .opener a:hover, .opener a:active{
+    color: var(--white);
+    text-decoration: none;
+    background-color: var(--blue);
+    padding: .7rem;
+    border-radius: 5px;
+}
+h2 {
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: dropIn 0.6s ease-out forwards;
+  }
+  h3 {
+    opacity: 0;
+    transform: translateY(-20px);
+    animation: dropIn 0.6s ease-out forwards;
+  }
+  @keyframes dropIn {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+ .opener > div{
+    width: 420px;
+    backdrop-filter: blur(11px);
+    padding: 25px;
+    text-align: center;
+
+
+ }
+.thing1{
+    grid-column: 1/ span 1;
+    grid-row: 1/ span 1;
+    padding: 1rem;
+  
+
+}
+
+.thing2{
+    grid-column: 1/span 1;
+    grid-row: 2/ span 1;
+    line-height: 30px;
+    
+}
+.thing3{
+    grid-column: 1/ span 1;
+    grid-row: 3/ span 1;
+   
+}
+.opener a:hover{
+    background-color: var(--red);
 }
 
 /* ADD FLOATING SVG LOGO BEFORE THE H1 */
- {
+ header img{
     content: "";
-
     left:-.5rem;
     width: 3.75rem;
     height: 3.75rem;
@@ -113,7 +301,7 @@ table {
     background: var(--charcoal);
     border-radius: 10px;
     position: relative;
-    transition: ;
+    transition: margin-bottom 2s ease-in;
     height: 0;
 }
 /* THIS ONE IS DONE FOR YOU */
@@ -140,22 +328,236 @@ table {
     animation: stepUp 1s ease-in-out forwards;
 }
 
+#aboutUs{
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+#aboutUs h2{
+    margin: 0 0 1rem 2rem;
+     
+}
+.offerGrid  {
+    transition: transform 0.3s ease-in-out;
+  }
+.offerGrid :hover {
+    transform: translateY(-10px);
+  }
+#offers h2{
+    margin: 0 0 1.5rem 2rem;
+}
+
+.offerGrid{
+    display: grid;
+}
+
+.grid1, .grid2, .grid3, .grid4, .grid5, .grid6{
+    background-color: var(--blue);
+    color: var(--white);
+    margin-top: 1rem;
+    padding: 1rem;
+    border-radius: 10px;
+}
+.grid1 h3, .grid2 h3, .grid3 h3, .grid4 h3, .grid5 h3, .grid6 h3{
+    margin: 0 0 1rem 2rem;
+}
+
+#results{
+    background-color: var(--blue);
+    color: var(--white);
+    margin-top: 2rem;
+    padding: 1rem;
+}
+ 
+
+
+#results h3, #results h2{
+    margin: 1rem  0 1rem 2rem ;
+}
+
+table{
+    margin: auto;
+}
+td, th{
+    padding: 1rem;
+    text-align: center;
+    border: 1px solid var(--charcoal);
+}
+
+tr:nth-child(1) {
+    background-color: var(--black);
+}
+tr:nth-child(2) {
+    background-color: var(--black);
+}
+tr:nth-child(3) {
+    background-color: var(--charcoal);
+}
+tr:nth-child(4) {
+    background-color: var(--black);
+}
+tr:nth-child(5) {
+    background-color: var(--charcoal);
+}
+tr:nth-child(6) {
+    background-color: var(--black);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;   
+    margin-top: 20px;
+}
+label{
+    align-self: flex-start;
+    margin-left: calc(50% - 200px);
+}
+input[type=text], input[type=email] {
+    width: 400px;
+    display: flex;
+    border: 3px solid var(--blue);
+    box-sizing: border-box;
+    padding-bottom: 1rem;
+    margin-top: 1rem;
+  }
+
+  #contact{
+  background-color: var(--black);
+  color: var(--white);
+  padding: 2rem;
+  }
+
+  #contact h2{
+    padding-bottom: 2rem;
+
+  }
+
+  #question{
+    height: 120px;
+  }
+
+  input[type="submit"] {
+    display: block;
+    margin: auto; 
+    padding: 12px 24px;
+    background-color: var(--blue);
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+    width: 400px;
+    font-weight: bold;
+    color: var(--white);
+    font-size: 1rem;
+  }
+  input[type="submit"]:hover{
+    background-color: var(--red);
+  }
+  footer{
+    background-color: var(--black);
+    color: var(--white);
+    padding: .5rem;
+    text-align: center;
+    line-height: 30px;
+}
+footer a{
+    color: var(--blue);
+}
 
 /* MEDIA QUERIES (MEDIUM) */ 
+@media screen and (min-width: 800px) {
+   .results-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+   }
+   .header1, .header2{
+    grid-row: 1/ span 1;
+   }
+   label{
+    align-self: flex-start;
+    margin-left: calc(50% - 300px);
+    }   
+    .offerGrid{
+        display: grid;
+        grid-template-columns: 20rem 20rem;
+        column-gap: 1rem;
+        justify-content: center;
+        align-content: center;
+    }
+    input[type=text], input[type=email], input[type="submit"] {
+        width: 600px;
+    }
+    
+    label span, input {
+          display:none;
+    }
+    nav{
+        width: 100%;
+       
+    }
+    nav ul {
+        overflow:visible;
+        margin-bottom: 1rem;
+        display: flex; 
+        justify-content: flex-end; 
+        grid-template-columns: .5fr .5fr .5fr;
+        max-height: none;         
+        overflow: visible;       
+        gap: 2rem;  
+      }
+      nav li {
+        display: inline;
+      }
 
-    #results {
-        grid-template-columns: 1fr 1fr;
+      
+      nav li a {
+        display:inline-block;
+        padding: 1rem;
+        margin-bottom: 2rem;
     }
-    .results-container {
-        flex-direction: row;
-        justify-content: space-between;
-    }
-    .results-table {
-        width: 50%;
-    }
-    .bar-chart {
-        width: 50%;
-    }
-
-
+}
 /* MEDIA QUERIES (LARGE) */
+@media screen and (min-width: 1024px){
+    .offerGrid{
+        display: grid;
+        grid-template-columns: 20rem 20rem 20rem;
+        column-gap: 1rem;
+        justify-content: center;
+        align-content: center;
+        align-items: start;
+        margin: 2rem auto
+    }
+   
+      .formGrid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        max-width: 90%;
+        margin: auto;
+
+      }
+      input[type=text], input[type=email], input[type=submit]{
+        width: 450px;
+        margin-top: 1rem;
+      }
+
+      .form1 {
+        grid-column: 1;
+        }
+      .form2 {
+        grid-column: 2; }
+      .form3 { 
+        grid-column: 1; }
+      .form4 {
+        grid-column: 2; }
+      .form5 { 
+        grid-column: 1; }
+      .form6 {
+        grid-column: 2;
+      }
+      label{
+        align-self: flex-start;
+        margin-left: calc(50% - 225px);
+    }
+      
+
+    }
